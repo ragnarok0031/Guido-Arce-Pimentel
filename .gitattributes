@@ -1,0 +1,6 @@
+* text=auto
+*.tsx linguist-language=TypeScript
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+*.css linguist-language=CSS
+*.md linguist-language=Markdown 
