@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone, Clock } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,7 +28,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-300 max-w-xs">
-              Educando con valores, formando el futuro de nuestra sociedad desde 1978.
+              Educando con valores, formando el futuro de nuestra sociedad desde 2014. Institución educativa comprometida con la formación técnico humanística.
             </p>
           </div>
 
@@ -86,37 +86,44 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-brand-400 flex-shrink-0 mt-0.5" />
                 <span className="text-gray-300">
-                  Av. Principal, Ciudad Guayana, Venezuela
+                  Comunidad Los Negros, Provincia Florida<br />
+                  Santa Cruz, Bolivia
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-brand-400 flex-shrink-0" />
-                <span className="text-gray-300">(+58) 286-123-4567</span>
+                <span className="text-gray-300">(+591) 3-9226234</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-brand-400 flex-shrink-0" />
                 <a
-                  href="mailto:contacto@arceschool.edu.ve"
+                  href="mailto:info@guidoarcepimentel.edu.bo"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  contacto@arceschool.edu.ve
+                  info@guidoarcepimentel.edu.bo
                 </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Clock className="h-5 w-5 text-brand-400 flex-shrink-0" />
+                <span className="text-gray-300">Lunes a Viernes: 7:00 AM - 3:00 PM</span>
               </li>
             </ul>
           </div>
 
           {/* Horarios y Redes Sociales */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Horarios</h3>
+            <h3 className="text-lg font-semibold mb-4">Información Adicional</h3>
             <div className="mb-4">
-              <p className="text-gray-300">Lunes a Viernes</p>
-              <p className="font-medium">7:00 AM - 3:00 PM</p>
+              <p className="text-gray-300 font-medium">Niveles Educativos:</p>
+              <p className="text-gray-300">Primaria y Secundaria</p>
+              <p className="text-gray-300 font-medium mt-2">Modalidad:</p>
+              <p className="text-gray-300">Técnico Humanístico</p>
             </div>
 
             <h3 className="text-lg font-semibold mb-3">Síguenos</h3>
             <div className="flex space-x-3">
               <a
-                href="https://facebook.com"
+                href="https://facebook.com/UEGuidoArcePimentel"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"
@@ -125,7 +132,7 @@ export function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/UEGuidoArce"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"
@@ -134,7 +141,7 @@ export function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/UEGuidoArce"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"

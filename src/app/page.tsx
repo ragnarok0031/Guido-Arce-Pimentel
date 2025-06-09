@@ -23,8 +23,8 @@ const mockNews = [
 ];
 
 const mockTestimonials = [
-  { id: 1, name: 'Ana Pérez', role: 'Madre de Familia', quote: 'Excelente institución, mis hijos están felices y aprendiendo mucho. Los profesores son muy dedicados.', image: 'https://placehold.co/100x100.png', dataAiHint: 'woman portrait' },
-  { id: 2, name: 'Carlos López', role: 'Exalumno (Promoción 2018)', quote: 'La formación que recibí en Guido Arce Pimentel fue fundamental para mi carrera profesional. ¡Grandes recuerdos!', image: 'https://placehold.co/100x100.png', dataAiHint: 'man portrait' },
+  { id: 1, name: 'Ana Pérez', role: 'Madre de Familia', quote: 'Excelente institución, mis hijos están felices y aprendiendo mucho. Los profesores son muy dedicados.', image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=100&h=100&auto=format&fit=crop', dataAiHint: 'woman portrait' },
+  { id: 2, name: 'Carlos López', role: 'Exalumno (Promoción 2018)', quote: 'La formación que recibí en Guido Arce Pimentel fue fundamental para mi carrera profesional. ¡Grandes recuerdos!', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&h=100&auto=format&fit=crop', dataAiHint: 'man portrait' },
 ];
 
 const features = [
@@ -52,7 +52,7 @@ export default function HomePage() {
       <section className="relative hero-section rounded-xl shadow-xl overflow-hidden enhanced-shadow">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90">
           <Image
-            src="https://placehold.co/1200x400.png"
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
             alt="Edificio principal de la U.E. Guido Arce Pimentel en Los Negros"
             fill
             style={{ objectFit: "cover" }}
@@ -302,12 +302,139 @@ export default function HomePage() {
       <section className="relative rounded-xl shadow-xl overflow-hidden enhanced-shadow">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90">
           <Image
-            src="https://placehold.co/1200x400.png"
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
             alt="Estudiantes de la U.E. Guido Arce Pimentel"
             fill
             style={{ objectFit: "cover" }}
             className="opacity-20 mix-blend-multiply"
             data-ai-hint="students classroom rural"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
+              ¿Interesado en formar parte de nuestra institución?
+            </h2>
+            <p className="text-base sm:text-lg mb-8 max-w-xl mx-auto text-white/90">
+              Conoce nuestros programas, requisitos de admisión y proceso de matrícula para el próximo año escolar.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 shadow-md rounded-full" asChild>
+                <Link href="/oferta-educativa/admision">
+                  <SafeUsers className="mr-2 h-5 w-5" /> Proceso de Admisión
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full" asChild>
+                <Link href="/institucional/contacto">
+                  <SafeCalendarDays className="mr-2 h-5 w-5" /> Agendar Visita
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Noticias y Eventos Recientes */}
+      <section className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+            Noticias y Eventos Recientes
+          </h2>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          {mockNews.map((item) => (
+            <Card key={item.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden">
+              <div className="relative h-48">
+                <Image
+                  src={`https://source.unsplash.com/random/400x250/?school,education,${item.id}`}
+                  alt={item.title}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <CardContent className="pt-6 card-content-transition">
+                <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                  <SafeCalendarDays className="h-4 w-4" />
+                  <span>{item.date}</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2 text-gray-800">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </CardContent>
+              <CardFooter className="pt-0 pb-4">
+                <Button variant="ghost" size="sm" className="text-red-600 gap-1 rounded-full hover:bg-red-50" asChild>
+                  <Link href="/noticias-eventos">
+                    Leer más <SafeArrowRight className="h-3 w-3" />
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Button variant="outline" className="btn-outline border-visible rounded-full shadow-sm" asChild>
+            <Link href="/noticias-eventos">
+              Ver todas las noticias y eventos <SafeArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Testimonios */}
+      <section className="section-alt py-12 sm:py-16 rounded-xl">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+              Lo Que Dice Nuestra Comunidad
+            </h2>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+            {mockTestimonials.map((testimonial) => (
+              <Card key={testimonial.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden">
+                <CardContent className="p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start card-content-transition">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                    <Image
+                      src={testimonial.image}
+                      alt={`Foto de ${testimonial.name}`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      data-ai-hint={testimonial.dataAiHint}
+                    />
+                  </div>
+                  <div className="flex-1 text-center sm:text-left">
+                    <div className="text-red-600 mb-2">❝</div>
+                    <p className="text-gray-700 italic mb-4">{testimonial.quote}</p>
+                    <div>
+                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="outline" className="btn-outline border-visible rounded-full shadow-sm" asChild>
+              <Link href="/testimonios">
+                Ver más testimonios <SafeArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Banner Call to Action */}
+      <section className="relative py-12 sm:py-16 rounded-xl shadow-xl overflow-hidden enhanced-shadow">
+        <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-900">
+          <Image
+            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
+            alt="Estudiantes en el campus"
+            fill
+            style={{ objectFit: "cover" }}
+            className="opacity-20 mix-blend-multiply"
+            data-ai-hint="students campus"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">

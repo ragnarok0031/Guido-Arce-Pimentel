@@ -8,11 +8,23 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
     images: {
-        domains: ['placehold.co'],
+        domains: ['placehold.co', 'images.unsplash.com', 'source.unsplash.com'],
         remotePatterns: [
             {
                 protocol: 'https',
                 hostname: 'placehold.co',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'source.unsplash.com',
                 port: '',
                 pathname: '/**',
             },

@@ -125,8 +125,9 @@ export function Header() {
       <div className="hidden md:block bg-accent-900 text-white py-1.5">
         <div className="container mx-auto px-4 flex justify-between text-xs">
           <div className="flex items-center space-x-4">
-            <span>Teléfono: (+58) 286-123-4567</span>
-            <span>Email: contacto@arceschool.edu.ve</span>
+            <span>Teléfono: (+591) 3-9226234</span>
+            <span>Email: info@guidoarcepimentel.edu.bo</span>
+            <span>Horario: Lun-Vie 7:00-15:00</span>
           </div>
           <div className="flex space-x-4">
             <Link href="/oferta-educativa/admision" className="hover:underline">
