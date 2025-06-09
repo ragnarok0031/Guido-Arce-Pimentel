@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   keywords: ['educación', 'colegio', 'secundaria', 'estudiantes', 'aprendizaje', 'plataforma educativa'],
   authors: [{ name: 'U.E. Guido Arce Pimentel' }],
   creator: 'U.E. Guido Arce Pimentel',
+  icons: {
+    icon: '/Logogap.png',
+    shortcut: '/Logogap.png',
+    apple: '/Logogap.png',
+  },
 };
 
 export default function RootLayout({
