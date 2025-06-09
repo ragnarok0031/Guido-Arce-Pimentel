@@ -118,7 +118,7 @@ export function Header() {
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
       isScrolled
-        ? "bg-accent-900 text-white shadow-md"
+        ? "bg-gradient-red-black text-white shadow-md"
         : "bg-gradient-red-black text-white"
     )}>
       {/* Barra superior con información de contacto */}
