@@ -1,11 +1,9 @@
-
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, Calendar } from "@/components/ui";
 import Image from "next/legacy/image";
 import { CalendarDays, CheckCircle, AlertTriangle } from "lucide-react";
 // import type { Metadata } from 'next'; // Metadata should be in a Server Component (e.g., layout.tsx) if this is a Client Component
-import { Calendar } from "@/components/ui/calendar"; // Shadcn calendar
 import { es } from 'date-fns/locale'; // Import Spanish locale
 
 // export const metadata: Metadata = { // If this page is "use client", metadata should be in layout.tsx or a parent server component
@@ -53,7 +51,7 @@ export default function CalendarioPage() {
               className="rounded-md border"
             />
           </CardContent>
-           <CardContent>
+          <CardContent>
             <p className="text-sm text-muted-foreground">
               Este es un calendario de referencia. Para eventos específicos, consulte la lista de "Fechas Importantes".
             </p>
@@ -68,8 +66,8 @@ export default function CalendarioPage() {
           <CardContent className="space-y-4 max-h-[600px] overflow-y-auto">
             {importantDates.map(item => (
               <div key={item.event} className="p-3 border rounded-lg flex items-start">
-                {item.type === "Feriado" ? 
-                  <AlertTriangle className="h-5 w-5 mr-3 mt-1 text-destructive flex-shrink-0" /> : 
+                {item.type === "Feriado" ?
+                  <AlertTriangle className="h-5 w-5 mr-3 mt-1 text-destructive flex-shrink-0" /> :
                   <CheckCircle className="h-5 w-5 mr-3 mt-1 text-green-600 flex-shrink-0" />
                 }
                 <div>
@@ -87,11 +85,11 @@ export default function CalendarioPage() {
       {/* Placeholder for image/graphic */}
       <Card className="mt-8">
         <CardContent className="pt-6">
-          <Image 
-            src="https://placehold.co/1000x300.png?text=Eventos+Destacados+del+Año" 
-            alt="Banner de eventos escolares" 
-            width={1000} 
-            height={300} 
+          <Image
+            src="https://placehold.co/1000x300.png?text=Eventos+Destacados+del+Año"
+            alt="Banner de eventos escolares"
+            width={1000}
+            height={300}
             className="rounded-lg shadow-md mx-auto object-cover"
             data-ai-hint="school events banner"
           />
