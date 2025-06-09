@@ -57,13 +57,13 @@ export default function HomePage() {
     <div className="space-y-16 w-full">
       {/* Hero Section */}
       <section className="relative hero-section rounded-xl shadow-xl overflow-hidden enhanced-shadow">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/60 dark:from-primary/90 dark:to-primary/80">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/70 dark:from-primary/90 dark:to-primary/80">
           <Image
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
             alt="Edificio principal de la U.E. Guido Arce Pimentel en Los Negros"
             fill
             style={{ objectFit: "cover" }}
-            className="opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-soft-light"
+            className="opacity-30 dark:opacity-25 mix-blend-multiply dark:mix-blend-soft-light"
             data-ai-hint="school building rural"
             priority
             sizes="100vw"
@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/2 text-center md:text-left">
+            <div className="md:w-1/2 text-center md:text-left bg-black/30 dark:bg-transparent p-6 rounded-xl backdrop-blur-sm">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-shadow-lg">
                 U.E. Guido Arce Pimentel
               </h1>
@@ -81,12 +81,12 @@ export default function HomePage() {
                 Institución educativa que integra el aprendizaje académico con la economía agrícola local, formando jóvenes con conocimientos teóricos y habilidades prácticas.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-white shadow-md rounded-full transition-all duration-300" asChild>
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-white shadow-md rounded-full transition-all duration-300 font-semibold" asChild>
                   <Link href="/oferta-educativa/programas">
                     <SafeGraduationCap className="mr-2 h-5 w-5" /> Oferta Educativa
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full transition-all duration-300" asChild>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 border-visible rounded-full transition-all duration-300 border-2 font-semibold" asChild>
                   <Link href="/institucional/contacto">
                     <SafeUsers className="mr-2 h-5 w-5" /> Contáctanos
                   </Link>
