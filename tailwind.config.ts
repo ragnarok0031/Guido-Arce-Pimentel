@@ -27,32 +27,32 @@ export default {
 			colors: {
 				// Nuevos colores institucionales
 				brand: {
-					// Azul como color principal
-					50: '#E6F3FF',
-					100: '#CCE7FF',
-					200: '#99CFFF',
-					300: '#66B7FF',
-					400: '#339FFF',
-					500: '#0088FF', // Color principal
-					600: '#0070D6',
-					700: '#0059AD',
-					800: '#004383',
-					900: '#002C5A',
-					950: '#001A36',
+					// Rojo como color principal
+					50: '#FFF5F5',
+					100: '#FFEBEB',
+					200: '#FFCDCD',
+					300: '#FFAEAE',
+					400: '#FF8F8F',
+					500: '#FF5252', // Color principal - Rojo
+					600: '#E53935',
+					700: '#C62828',
+					800: '#B71C1C',
+					900: '#8B0000',
+					950: '#5C0000',
 				},
 				accent: {
-					// Rojo como color de acento
-					50: '#FFF1F1',
-					100: '#FFE2E2',
-					200: '#FFC5C5',
-					300: '#FFA8A8',
-					400: '#FF8B8B',
-					500: '#FF6D6D', // Color de acento
-					600: '#DB5858',
-					700: '#B74343',
-					800: '#932E2E',
-					900: '#701919',
-					950: '#4D0F0F',
+					// Negro como color de acento
+					50: '#F2F2F2',
+					100: '#E6E6E6',
+					200: '#CCCCCC',
+					300: '#B3B3B3',
+					400: '#999999',
+					500: '#666666', // Color de acento
+					600: '#4D4D4D',
+					700: '#333333',
+					800: '#1A1A1A',
+					900: '#0D0D0D',
+					950: '#000000',
 				},
 				success: {
 					50: '#ECFDF5',
@@ -85,7 +85,7 @@ export default {
 					dark: '#121212',
 				},
 				surface: {
-					light: '#F5F7FA',
+					light: '#F8F8F8',
 					dark: '#1E1E1E',
 				},
 				text: {

@@ -6,7 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-900 text-white">
+    <footer className="bg-accent-900 text-white">
       {/* Footer principal con información de contacto y enlaces */}
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -119,7 +119,7 @@ export function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-800 hover:bg-brand-700 text-white p-2 rounded-full transition-colors"
+                className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -128,7 +128,7 @@ export function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-800 hover:bg-brand-700 text-white p-2 rounded-full transition-colors"
+                className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
@@ -137,7 +137,7 @@ export function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-brand-800 hover:bg-brand-700 text-white p-2 rounded-full transition-colors"
+                className="bg-brand-700 hover:bg-brand-600 text-white p-2 rounded-full transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -148,7 +148,7 @@ export function Footer() {
       </div>
 
       {/* Copyright y política de privacidad */}
-      <div className="bg-brand-950 py-4">
+      <div className="bg-black py-4">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 text-center md:text-left">
             &copy; {currentYear} U.E. Guido Arce Pimentel. Todos los derechos reservados.

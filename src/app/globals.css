@@ -85,11 +85,11 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+    @apply bg-brand-500 dark:bg-brand-700 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-400 dark:bg-gray-500;
+    @apply bg-brand-600 dark:bg-brand-800;
   }
 }
 
@@ -105,11 +105,11 @@
   }
 
   .btn-secondary {
-    @apply btn bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 focus:ring-gray-500;
+    @apply btn bg-accent-800 text-white hover:bg-accent-900 dark:bg-accent-700 dark:text-gray-200 dark:hover:bg-accent-800 focus:ring-accent-700;
   }
 
   .btn-accent {
-    @apply btn bg-accent-500 text-white hover:bg-accent-600 dark:bg-accent-600 dark:hover:bg-accent-700 focus:ring-accent-500;
+    @apply btn bg-brand-500 text-white hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700 focus:ring-brand-500;
   }
 
   .btn-outline {
@@ -138,7 +138,7 @@
 
   /* Cards */
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-xl shadow-subtle dark:shadow-dark-subtle overflow-hidden transition-all duration-300;
+    @apply bg-white dark:bg-accent-900 rounded-xl shadow-subtle dark:shadow-dark-subtle overflow-hidden transition-all duration-300;
   }
 
   .card-hover {
@@ -154,7 +154,7 @@
   .form-textarea,
   .form-select,
   .form-multiselect {
-    @apply block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-brand-500 focus:ring-brand-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-500;
+    @apply block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 placeholder-gray-500 focus:border-brand-500 focus:ring-brand-500 dark:border-accent-700 dark:bg-accent-800 dark:text-white dark:placeholder-gray-400 dark:focus:border-brand-500;
   }
 
   .form-checkbox,
@@ -172,7 +172,19 @@
   }
 
   .bg-gradient-accent {
-    @apply bg-gradient-to-br from-accent-500 to-accent-700 dark:from-accent-600 dark:to-accent-900;
+    @apply bg-gradient-to-br from-accent-700 to-accent-900 dark:from-accent-800 dark:to-black;
+  }
+
+  .bg-gradient-red-black {
+    @apply bg-gradient-to-r from-brand-700 via-brand-800 to-accent-900;
+  }
+
+  .bg-gradient-black-red {
+    @apply bg-gradient-to-r from-accent-900 via-accent-800 to-brand-700;
+  }
+
+  .bg-gradient-diagonal {
+    @apply bg-gradient-to-tr from-accent-900 via-brand-800 to-brand-600;
   }
 
   .section {
@@ -180,7 +192,7 @@
   }
 
   .section-alt {
-    @apply bg-surface-light dark:bg-surface-dark;
+    @apply bg-gradient-to-b from-white to-gray-50 dark:from-accent-900 dark:to-accent-950;
   }
 
   .container-tight {
@@ -189,7 +201,7 @@
 
   /* Header and Navigation */
   .navbar {
-    @apply sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-subtle dark:shadow-dark-subtle transition-all duration-300;
+    @apply sticky top-0 z-50 bg-accent-900 text-white shadow-subtle dark:shadow-dark-subtle transition-all duration-300;
   }
 
   .navbar-scrolled {
@@ -197,7 +209,7 @@
   }
 
   .nav-link {
-    @apply px-3 py-2 text-sm font-medium text-gray-700 hover:text-brand-600 dark:text-gray-300 dark:hover:text-brand-400 transition-colors;
+    @apply px-3 py-2 text-sm font-medium text-gray-100 hover:text-brand-400 dark:text-gray-300 dark:hover:text-brand-400 transition-colors;
   }
 
   .nav-link-active {

@@ -118,11 +118,11 @@ export function Header() {
     <header className={cn(
       "sticky top-0 z-50 w-full transition-all duration-300",
       isScrolled
-        ? "bg-white dark:bg-gray-900 shadow-md"
-        : "bg-brand-600 text-white"
+        ? "bg-accent-900 text-white shadow-md"
+        : "bg-gradient-red-black text-white"
     )}>
       {/* Barra superior con información de contacto */}
-      <div className="hidden md:block bg-brand-700 text-white py-1.5">
+      <div className="hidden md:block bg-accent-900 text-white py-1.5">
         <div className="container mx-auto px-4 flex justify-between text-xs">
           <div className="flex items-center space-x-4">
             <span>Teléfono: (+58) 286-123-4567</span>
@@ -215,9 +215,7 @@ export function Header() {
               size="sm"
               className={cn(
                 "hidden md:flex",
-                isScrolled
-                  ? "border-brand-600 text-brand-600 hover:bg-brand-50 dark:border-brand-400 dark:text-brand-400"
-                  : "border-white text-white hover:bg-white/10"
+                "border-white text-white hover:bg-white/10"
               )}
             >
               Iniciar Sesión
@@ -238,7 +236,7 @@ export function Header() {
               <SheetContent side="right" className="w-[280px] sm:w-[350px] p-0">
                 <SheetHeader className={cn(
                   "p-4 border-b",
-                  "bg-brand-600 text-white"
+                  "bg-gradient-red-black text-white"
                 )}>
                   <div className="flex items-center gap-3">
                     <div className="relative h-10 w-10 bg-white rounded-full p-1">
@@ -251,8 +249,8 @@ export function Header() {
                       />
                     </div>
                     <div>
-                      <p className="font-bold text-lg">ArceConnect</p>
-                      <p className="text-xs opacity-90">U.E. Guido Arce Pimentel</p>
+                      <h3 className="font-bold">ArceConnect</h3>
+                      <p className="text-xs text-gray-200">U.E. Guido Arce Pimentel</p>
                     </div>
                   </div>
                 </SheetHeader>
