@@ -176,7 +176,7 @@
   }
 
   .bg-gradient-red-black {
-    @apply bg-gradient-to-r from-brand-700 via-brand-800 to-accent-900 dark:from-brand-800 dark:via-brand-900 dark:to-accent-950;
+    @apply bg-gradient-to-r from-brand-600 via-brand-700 to-accent-900 dark:from-brand-800 dark:via-brand-900 dark:to-accent-950;
   }
 
   .bg-gradient-black-red {
@@ -192,7 +192,7 @@
   }
 
   .section-alt {
-    @apply bg-gradient-to-b from-white to-gray-50 dark:from-accent-900 dark:to-accent-950;
+    @apply bg-gradient-to-b from-gray-50 to-gray-100 dark:from-accent-950 dark:to-black py-12 md:py-16 lg:py-20 transition-colors duration-300;
   }
 
   .container-tight {
@@ -305,14 +305,38 @@
   }
 
   .high-contrast-text {
-    @apply text-gray-900 dark:text-white;
+    @apply text-gray-900 dark:text-white transition-colors duration-300;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-3 high-contrast-text;
+  }
+
+  .section-divider {
+    @apply w-24 h-1 bg-brand-600 dark:bg-brand-500 mx-auto rounded-full transition-colors duration-300;
   }
 
   .dark-adaptive-red {
-    @apply text-red-600 dark:text-red-400;
+    @apply text-red-600 dark:text-red-400 transition-colors duration-300;
   }
 
   .dark-adaptive-bg {
-    @apply bg-white dark:bg-accent-900;
+    @apply bg-white dark:bg-accent-900 transition-colors duration-300 border border-gray-100 dark:border-gray-800;
+  }
+
+  .colored-bg {
+    @apply bg-gray-50 dark:bg-gray-900 transition-colors duration-300;
+  }
+
+  .enhanced-shadow {
+    @apply shadow-lg dark:shadow-xl;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .card-content-transition {
+    @apply transition-colors duration-300;
   }
 }

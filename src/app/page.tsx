@@ -57,13 +57,13 @@ export default function HomePage() {
     <div className="space-y-16 w-full">
       {/* Hero Section */}
       <section className="relative hero-section rounded-xl shadow-xl overflow-hidden enhanced-shadow">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/70 dark:from-primary/90 dark:to-primary/80">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/60 dark:from-primary/90 dark:to-primary/80">
           <Image
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
             alt="Edificio principal de la U.E. Guido Arce Pimentel en Los Negros"
             fill
             style={{ objectFit: "cover" }}
-            className="opacity-30 mix-blend-multiply"
+            className="opacity-40 dark:opacity-25 mix-blend-multiply dark:mix-blend-soft-light"
             data-ai-hint="school building rural"
             priority
             sizes="100vw"
@@ -81,12 +81,12 @@ export default function HomePage() {
                 Institución educativa que integra el aprendizaje académico con la economía agrícola local, formando jóvenes con conocimientos teóricos y habilidades prácticas.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 shadow-md rounded-full" asChild>
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-white shadow-md rounded-full transition-all duration-300" asChild>
                   <Link href="/oferta-educativa/programas">
                     <SafeGraduationCap className="mr-2 h-5 w-5" /> Oferta Educativa
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full" asChild>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full transition-all duration-300" asChild>
                   <Link href="/institucional/contacto">
                     <SafeUsers className="mr-2 h-5 w-5" /> Contáctanos
                   </Link>
@@ -113,10 +113,10 @@ export default function HomePage() {
       {/* Características destacadas */}
       <section className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 high-contrast-text">
+          <h2 className="section-title">
             Nuestra Propuesta Educativa
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="section-divider"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
@@ -138,21 +138,21 @@ export default function HomePage() {
       {/* Enlaces Rápidos */}
       <section className="container mx-auto px-4 py-8">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+          <h2 className="section-title">
             Enlaces Rápidos
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="section-divider"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { title: "Noticias y Eventos", href: "/noticias-eventos", icon: SafeNewspaper, description: "Información actualizada sobre actividades y novedades escolares.", color: "colored-bg" },
-            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Cronograma de fechas importantes y actividades del año escolar.", color: "bg-secondary text-gray-700 dark:text-gray-200" },
-            { title: "Portal de Admisiones", href: "/oferta-educativa/admision", icon: SafeUsers, description: "Información sobre el proceso de admisión y requisitos de inscripción.", color: "colored-bg" },
-            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Formularios, reglamentos y documentos oficiales para descargar.", color: "bg-secondary text-gray-700 dark:text-gray-200" },
+            { title: "Noticias y Eventos", href: "/noticias-eventos", icon: SafeNewspaper, description: "Información actualizada sobre actividades y novedades escolares.", color: "bg-brand-50 dark:bg-brand-900/30" },
+            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Cronograma de fechas importantes y actividades del año escolar.", color: "bg-accent-50 dark:bg-accent-900/50" },
+            { title: "Portal de Admisiones", href: "/oferta-educativa/admision", icon: SafeUsers, description: "Información sobre el proceso de admisión y requisitos de inscripción.", color: "bg-brand-50 dark:bg-brand-900/30" },
+            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Formularios, reglamentos y documentos oficiales para descargar.", color: "bg-accent-50 dark:bg-accent-900/50" },
           ].map(link => (
             <Link key={link.title} href={link.href} className="block h-full">
-              <Card className="card-hover h-full hover-lift enhanced-shadow rounded-xl overflow-hidden">
-                <CardHeader className={`${link.color} rounded-t-lg`}>
+              <Card className="card-hover h-full hover-lift enhanced-shadow rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+                <CardHeader className={`${link.color} rounded-t-lg transition-colors duration-300`}>
                   <div className="flex justify-center">
                     <link.icon className="h-10 w-10 sm:h-12 sm:w-12 text-red-600 dark:text-red-400" />
                   </div>
@@ -162,7 +162,7 @@ export default function HomePage() {
                   <p className="text-sm text-gray-600 dark:text-gray-400">{link.description}</p>
                 </CardContent>
                 <CardFooter className="pt-0 pb-4 justify-center">
-                  <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20">
+                  <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-300">
                     Ver detalles <SafeArrowRight className="h-3 w-3" />
                   </Button>
                 </CardFooter>
@@ -175,14 +175,14 @@ export default function HomePage() {
       {/* Noticias y Eventos Recientes */}
       <section className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+          <h2 className="section-title">
             Noticias y Eventos Recientes
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="section-divider"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {mockNews.map((item) => (
-            <Card key={item.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden">
+            <Card key={item.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
               <div className="relative h-48">
                 <Image
                   src={`https://source.unsplash.com/random/400x250/?school,education,${item.id}`}
@@ -193,7 +193,7 @@ export default function HomePage() {
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent dark:from-black/90"></div>
                 <div className="absolute bottom-0 left-0 p-3 flex items-center gap-2 text-sm text-white">
                   <SafeCalendarDays className="h-4 w-4" />
                   <span>{item.date}</span>
@@ -204,7 +204,7 @@ export default function HomePage() {
                 <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
               </CardContent>
               <CardFooter className="pt-0 pb-4">
-                <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20" asChild>
+                <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors duration-300" asChild>
                   <Link href="/noticias-eventos">
                     Leer más <SafeArrowRight className="h-3 w-3" />
                   </Link>
@@ -214,7 +214,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="text-center mt-8">
-          <Button variant="outline" className="btn-outline border-visible rounded-full shadow-sm" asChild>
+          <Button variant="outline" className="btn-outline border-visible rounded-full shadow-sm transition-all duration-300" asChild>
             <Link href="/noticias-eventos">
               Ver todas las noticias y eventos <SafeArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -226,16 +226,16 @@ export default function HomePage() {
       <section className="section-alt py-12 sm:py-16 rounded-xl">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+            <h2 className="section-title">
               Lo Que Dice Nuestra Comunidad
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+            <div className="section-divider"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {mockTestimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
+              <Card key={testimonial.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-accent-900/80 backdrop-blur-sm">
                 <CardContent className="p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start card-content-transition">
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0 shadow-md">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-brand-500/30 dark:border-brand-400/30 flex-shrink-0 shadow-md">
                     <Image
                       src={testimonial.image}
                       alt={`Foto de ${testimonial.name}`}
