@@ -91,15 +91,15 @@ export default {
 				text: {
 					light: {
 						primary: '#1A1A1A',
-						secondary: '#555555',
-						tertiary: '#888888',
-						disabled: '#BBBBBB',
+						secondary: '#444444',
+						tertiary: '#666666',
+						disabled: '#767676',
 					},
 					dark: {
 						primary: '#FFFFFF',
-						secondary: '#DDDDDD',
-						tertiary: '#AAAAAA',
-						disabled: '#777777',
+						secondary: '#EEEEEE',
+						tertiary: '#CCCCCC',
+						disabled: '#A0A0A0',
 					}
 				},
 				card: {

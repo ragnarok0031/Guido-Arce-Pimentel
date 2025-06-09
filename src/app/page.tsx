@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Newspaper, CalendarDays, Users, ArrowRight, FileText, GraduationCap, BookOpen, Award, Lightbulb } from 'lucide-react';
 import { withSuppressHydration } from '@/components/ui/icon-wrapper';
+import type { Metadata } from 'next';
+
+// Metadatos específicos para la página de inicio
+export const metadata: Metadata = {
+  title: 'Inicio - U.E. Guido Arce Pimentel',
+  description: 'Bienvenidos a la U.E. Guido Arce Pimentel. Educación técnico humanística de calidad en Los Negros, Bolivia.',
+};
 
 // Envolver los iconos con el wrapper para suprimir advertencias de hidratación
 const SafeNewspaper = withSuppressHydration(Newspaper);
@@ -59,6 +66,8 @@ export default function HomePage() {
             className="opacity-20 mix-blend-multiply"
             data-ai-hint="school building rural"
             priority
+            sizes="100vw"
+            fetchPriority="high"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
@@ -92,6 +101,8 @@ export default function HomePage() {
                   fill
                   style={{ objectFit: "cover" }}
                   className="scale-90 hover:scale-100 transition-transform duration-300"
+                  priority
+                  sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
                 />
               </div>
             </div>
@@ -134,10 +145,10 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { title: "Noticias y Eventos", href: "/noticias-eventos", icon: SafeNewspaper, description: "Manténgase al día con lo último.", color: "colored-bg" },
-            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Fechas importantes y actividades.", color: "bg-secondary text-gray-700" },
-            { title: "Portal de Admisiones", href: "/oferta-educativa/admision", icon: SafeUsers, description: "Únase a nuestra familia.", color: "colored-bg" },
-            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Acceda a documentos importantes.", color: "bg-secondary text-gray-700" },
+            { title: "Noticias y Eventos", href: "/noticias-eventos", icon: SafeNewspaper, description: "Información actualizada sobre actividades y novedades escolares.", color: "colored-bg" },
+            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Cronograma de fechas importantes y actividades del año escolar.", color: "bg-secondary text-gray-700" },
+            { title: "Portal de Admisiones", href: "/oferta-educativa/admision", icon: SafeUsers, description: "Información sobre el proceso de admisión y requisitos de inscripción.", color: "colored-bg" },
+            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Formularios, reglamentos y documentos oficiales para descargar.", color: "bg-secondary text-gray-700" },
           ].map(link => (
             <Link key={link.title} href={link.href} className="block h-full">
               <Card className="card-hover h-full hover-lift enhanced-shadow rounded-xl overflow-hidden">
@@ -152,185 +163,12 @@ export default function HomePage() {
                 </CardContent>
                 <CardFooter className="pt-0 pb-4 justify-center">
                   <Button variant="ghost" size="sm" className="text-red-600 gap-1 rounded-full hover:bg-red-50">
-                    Ver más <SafeArrowRight className="h-3 w-3" />
+                    Ver detalles <SafeArrowRight className="h-3 w-3" />
                   </Button>
                 </CardFooter>
               </Card>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Información Institucional */}
-      <section className="section-alt py-10 sm:py-12 rounded-xl">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
-              Sobre Nuestra Institución
-            </h2>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-            <div className="lg:col-span-2 space-y-4">
-              <p className="text-gray-700">
-                La Unidad Educativa "Guido Arce Pimentel" (UE GAP) se erige como una institución educativa fundamental dentro de la comunidad rural de Los Negros, Bolivia. Establecida en 2014, la escuela desempeña un papel esencial en la formación del futuro de sus estudiantes.
-              </p>
-              <p className="text-gray-700">
-                Su compromiso con un currículo "Técnico Humanístico" refleja un enfoque con visión de futuro, con el objetivo de dotar a los jóvenes tanto de conocimientos teóricos como de habilidades prácticas relevantes para su entorno.
-              </p>
-              <p className="text-gray-700">
-                A pesar de enfrentar limitaciones de infraestructura, la UE GAP demuestra una notable resiliencia y fomenta la innovación pragmática, posicionándola como un agente clave en el desarrollo comunitario.
-              </p>
-              <div className="pt-4">
-                <Button variant="outline" className="btn-outline border-visible rounded-full shadow-sm" asChild>
-                  <Link href="/institucional/historia">
-                    <SafeBookOpen className="mr-2 h-4 w-4" /> Conocer nuestra historia
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="bg-white rounded-xl p-5 sm:p-6 shadow-md hover-lift enhanced-shadow border-visible">
-              <h3 className="font-semibold text-lg mb-4 flex items-center gap-2 text-red-600">
-                <SafeAward className="h-5 w-5" /> Datos Destacados
-              </h3>
-              <ul className="space-y-3 card-content-transition">
-                <li className="flex items-start gap-2">
-                  <div className="icon-container mt-0.5 rounded-lg">
-                    <SafeCalendarDays className="h-4 w-4 icon-primary" />
-                  </div>
-                  <div className="text-gray-700">
-                    <span className="font-medium text-gray-900">Fundación:</span> 2014
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="icon-container mt-0.5 rounded-lg">
-                    <SafeUsers className="h-4 w-4 icon-primary" />
-                  </div>
-                  <div className="text-gray-700">
-                    <span className="font-medium text-gray-900">Estudiantes:</span> Aproximadamente 350
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="icon-container mt-0.5 rounded-lg">
-                    <SafeGraduationCap className="h-4 w-4 icon-primary" />
-                  </div>
-                  <div className="text-gray-700">
-                    <span className="font-medium text-gray-900">Enfoque:</span> Técnico Humanístico
-                  </div>
-                </li>
-                <li className="flex items-start gap-2">
-                  <div className="icon-container mt-0.5 rounded-lg">
-                    <SafeAward className="h-4 w-4 icon-primary" />
-                  </div>
-                  <div className="text-gray-700">
-                    <span className="font-medium text-gray-900">Logros:</span> Competencias nacionales, proyectos de innovación
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Últimas Noticias */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="text-center md:text-left mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3 high-contrast-text">
-            Últimas Noticias
-          </h2>
-          <div className="w-24 h-1 bg-primary rounded-full"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {mockNews.map((item) => (
-            <Card key={item.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-lg sm:text-xl font-semibold text-gray-800">{item.title}</CardTitle>
-                <CardDescription className="text-sm text-gray-500">
-                  <SafeCalendarDays className="h-3 w-3 inline-block mr-1" /> {item.date}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="card-content-transition">
-                <p className="text-sm text-gray-600">{item.description}</p>
-              </CardContent>
-              <CardFooter className="pt-0 pb-4">
-                <Button variant="ghost" size="sm" className="text-red-600 p-0 gap-1 hover:bg-red-50">
-                  Leer más <SafeArrowRight className="h-3 w-3" />
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonios */}
-      <section className="container mx-auto px-4 py-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
-            Lo Que Dicen de Nosotros
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {mockTestimonials.map((testimonial) => (
-            <div key={testimonial.id} className="relative bg-white p-6 sm:p-8 card-hover enhanced-shadow rounded-xl border border-gray-200">
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-red-100">
-                  <Image
-                    src={testimonial.image}
-                    alt={`Foto de ${testimonial.name}`}
-                    fill
-                    className="rounded-full object-cover"
-                    data-ai-hint={testimonial.dataAiHint}
-                  />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-gray-900">{testimonial.name}</h3>
-                  <p className="text-sm text-gray-500">{testimonial.role}</p>
-                </div>
-              </div>
-              <div className="relative">
-                <span className="text-4xl sm:text-5xl text-red-100 absolute top-[-15px] left-[-10px]">"</span>
-                <p className="text-sm sm:text-base italic text-gray-700">{testimonial.quote}</p>
-                <span className="text-4xl sm:text-5xl text-red-100 absolute bottom-[-35px] right-[-10px]">"</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Llamada a la acción */}
-      <section className="relative rounded-xl shadow-xl overflow-hidden enhanced-shadow">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90">
-          <Image
-            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop"
-            alt="Estudiantes de la U.E. Guido Arce Pimentel"
-            fill
-            style={{ objectFit: "cover" }}
-            className="opacity-20 mix-blend-multiply"
-            data-ai-hint="students classroom rural"
-          />
-        </div>
-        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              ¿Interesado en formar parte de nuestra institución?
-            </h2>
-            <p className="text-base sm:text-lg mb-8 max-w-xl mx-auto text-white/90">
-              Conoce nuestros programas, requisitos de admisión y proceso de matrícula para el próximo año escolar.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 shadow-md rounded-full" asChild>
-                <Link href="/oferta-educativa/admision">
-                  <SafeUsers className="mr-2 h-5 w-5" /> Proceso de Admisión
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full" asChild>
-                <Link href="/institucional/contacto">
-                  <SafeCalendarDays className="mr-2 h-5 w-5" /> Agendar Visita
-                </Link>
-              </Button>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -352,6 +190,8 @@ export default function HomePage() {
                   fill
                   style={{ objectFit: "cover" }}
                   className="transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
               <CardContent className="pt-6 card-content-transition">
@@ -401,6 +241,8 @@ export default function HomePage() {
                       fill
                       style={{ objectFit: "cover" }}
                       data-ai-hint={testimonial.dataAiHint}
+                      loading="lazy"
+                      sizes="80px"
                     />
                   </div>
                   <div className="flex-1 text-center sm:text-left">
@@ -435,6 +277,8 @@ export default function HomePage() {
             style={{ objectFit: "cover" }}
             className="opacity-20 mix-blend-multiply"
             data-ai-hint="students campus"
+            loading="lazy"
+            sizes="100vw"
           />
         </div>
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
@@ -448,7 +292,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 shadow-md rounded-full" asChild>
                 <Link href="/oferta-educativa/admision">
-                  <SafeUsers className="mr-2 h-5 w-5" /> Proceso de Admisión
+                  <SafeUsers className="mr-2 h-5 w-5" /> Solicitar Admisión
                 </Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 border-visible rounded-full" asChild>
