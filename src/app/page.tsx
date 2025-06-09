@@ -70,23 +70,25 @@ export default function HomePage() {
             fetchPriority="high"
           />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10 hero-content">
           <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="md:w-1/2 text-center md:text-left bg-black/30 dark:bg-transparent p-6 rounded-xl backdrop-blur-sm">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-shadow-lg">
+            <div className="md:w-1/2 text-center md:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 hero-title">
                 U.E. Guido Arce Pimentel
               </h1>
-              <p className="text-xl md:text-2xl font-medium mb-6 text-white text-shadow">Forjando Futuros en Los Negros</p>
-              <p className="text-base sm:text-lg mb-8 max-w-xl text-white text-shadow-sm">
-                Institución educativa que integra el aprendizaje académico con la economía agrícola local, formando jóvenes con conocimientos teóricos y habilidades prácticas.
-              </p>
+              <p className="text-xl md:text-2xl font-medium mb-6 hero-subtitle">Forjando Futuros en Los Negros</p>
+              <div className="hero-description mb-8 max-w-xl">
+                <p className="text-base sm:text-lg">
+                  Institución educativa que integra el aprendizaje académico con la economía agrícola local, formando jóvenes con conocimientos teóricos y habilidades prácticas.
+                </p>
+              </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 dark:bg-gray-100 dark:hover:bg-white shadow-md rounded-full transition-all duration-300 font-semibold" asChild>
+                <Button size="lg" className="hero-button rounded-full" asChild>
                   <Link href="/oferta-educativa/programas">
                     <SafeGraduationCap className="mr-2 h-5 w-5" /> Oferta Educativa
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/20 border-visible rounded-full transition-all duration-300 border-2 font-semibold" asChild>
+                <Button size="lg" variant="outline" className="hero-button-outline rounded-full" asChild>
                   <Link href="/institucional/contacto">
                     <SafeUsers className="mr-2 h-5 w-5" /> Contáctanos
                   </Link>

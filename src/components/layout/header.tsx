@@ -197,17 +197,22 @@ export function Header() {
 
             {/* Selector de tema */}
             {mounted && (
-              <button
-                className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-              >
-                {theme === 'dark' ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </button>
+              <div className="relative group z-10">
+                <button
+                  className="p-2 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 transition-all duration-300 shadow-sm"
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+                >
+                  {theme === 'dark' ? (
+                    <Sun className="h-5 w-5 text-yellow-200" />
+                  ) : (
+                    <Moon className="h-5 w-5" />
+                  )}
+                </button>
+                <div className="absolute right-0 top-full mt-2 w-40 bg-white dark:bg-gray-800 rounded-md shadow-lg p-2 text-xs text-center text-gray-800 dark:text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 border border-gray-100 dark:border-gray-700">
+                  {theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+                </div>
+              </div>
             )}
 
             {/* Iniciar sesión */}
@@ -316,32 +321,29 @@ export function Header() {
 // Componente de elemento de navegación
 function NavItem({ link }: { link: NavLinkItem }) {
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <button
-          className="px-3 py-2 text-sm font-medium flex items-center gap-1 rounded-md hover:bg-white/10 transition-colors focus:outline-none"
-          aria-label={`Menú de ${link.label}`}
-        >
-          {link.label}
-          <ChevronDown className="h-4 w-4 opacity-70" />
-        </button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="center" className="w-56 bg-white dark:bg-gray-900 rounded-lg shadow-lg p-1 z-50 animate-in fade-in-50 border border-gray-200 dark:border-gray-800">
-        <DropdownMenuLabel className="text-gray-500 dark:text-gray-400 font-medium">
-          {link.label}
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
-        {link.children.map((child) => (
-          <DropdownMenuItem key={child.label} asChild>
+    <div className="dropdown relative">
+      <button
+        className="px-3 py-2 text-sm font-medium flex items-center gap-1 rounded-md hover:bg-white/10 transition-colors focus:outline-none nav-link dropdown-toggle"
+        aria-label={`Menú de ${link.label}`}
+      >
+        {link.label}
+      </button>
+      <div className="dropdown-content">
+        <div className="py-2">
+          <div className="px-4 pb-2 mb-2 border-b border-gray-100 dark:border-gray-700">
+            <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{link.label}</span>
+          </div>
+          {link.children.map((child) => (
             <Link
+              key={child.label}
               href={child.href}
-              className="flex items-center px-3 py-2 text-sm rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 w-full transition-colors"
+              className="dropdown-item"
             >
               <span className="truncate">{child.label}</span>
             </Link>
-          </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
