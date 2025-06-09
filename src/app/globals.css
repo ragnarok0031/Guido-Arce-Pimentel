@@ -168,7 +168,7 @@
 
   /* Backgrounds and sections */
   .bg-gradient {
-    @apply bg-gradient-to-br from-brand-500 to-brand-700 dark:from-brand-600 dark:to-brand-900;
+    @apply bg-gradient-to-br from-brand-500 to-brand-700 dark:from-brand-700 dark:to-brand-900;
   }
 
   .bg-gradient-accent {
@@ -176,15 +176,15 @@
   }
 
   .bg-gradient-red-black {
-    @apply bg-gradient-to-r from-brand-700 via-brand-800 to-accent-900;
+    @apply bg-gradient-to-r from-brand-700 via-brand-800 to-accent-900 dark:from-brand-800 dark:via-brand-900 dark:to-accent-950;
   }
 
   .bg-gradient-black-red {
-    @apply bg-gradient-to-r from-accent-900 via-accent-800 to-brand-700;
+    @apply bg-gradient-to-r from-accent-900 via-accent-800 to-brand-700 dark:from-accent-950 dark:via-accent-900 dark:to-brand-800;
   }
 
   .bg-gradient-diagonal {
-    @apply bg-gradient-to-tr from-accent-900 via-brand-800 to-brand-600;
+    @apply bg-gradient-to-tr from-accent-900 via-brand-800 to-brand-600 dark:from-accent-950 dark:via-brand-900 dark:to-brand-700;
   }
 
   .section {
@@ -302,5 +302,17 @@
 
   .text-gradient-accent {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-600 to-accent-400;
+  }
+
+  .high-contrast-text {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .dark-adaptive-red {
+    @apply text-red-600 dark:text-red-400;
+  }
+
+  .dark-adaptive-bg {
+    @apply bg-white dark:bg-accent-900;
   }
 }

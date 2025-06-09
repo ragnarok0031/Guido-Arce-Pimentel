@@ -57,13 +57,13 @@ export default function HomePage() {
     <div className="space-y-16 w-full">
       {/* Hero Section */}
       <section className="relative hero-section rounded-xl shadow-xl overflow-hidden enhanced-shadow">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary/90">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/70 dark:from-primary/90 dark:to-primary/80">
           <Image
             src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
             alt="Edificio principal de la U.E. Guido Arce Pimentel en Los Negros"
             fill
             style={{ objectFit: "cover" }}
-            className="opacity-20 mix-blend-multiply"
+            className="opacity-30 mix-blend-multiply"
             data-ai-hint="school building rural"
             priority
             sizes="100vw"
@@ -73,11 +73,11 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 py-12 md:py-16 relative z-10">
           <div className="flex flex-col md:flex-row gap-8 items-center">
             <div className="md:w-1/2 text-center md:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-shadow-lg">
                 U.E. Guido Arce Pimentel
               </h1>
-              <p className="text-xl md:text-2xl font-medium mb-6 text-white">Forjando Futuros en Los Negros</p>
-              <p className="text-base sm:text-lg mb-8 max-w-xl text-white/90">
+              <p className="text-xl md:text-2xl font-medium mb-6 text-white text-shadow">Forjando Futuros en Los Negros</p>
+              <p className="text-base sm:text-lg mb-8 max-w-xl text-white text-shadow-sm">
                 Institución educativa que integra el aprendizaje académico con la economía agrícola local, formando jóvenes con conocimientos teóricos y habilidades prácticas.
               </p>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -113,22 +113,22 @@ export default function HomePage() {
       {/* Características destacadas */}
       <section className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-primary high-contrast-text">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 high-contrast-text">
             Nuestra Propuesta Educativa
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="card-hover border-t-4 border-primary hover-lift enhanced-shadow border-visible rounded-xl overflow-hidden">
+            <Card key={index} className="card-hover border-t-4 border-primary hover-lift enhanced-shadow border-visible rounded-xl overflow-hidden dark-adaptive-bg">
               <CardHeader className="pb-2">
                 <div className="icon-container w-16 h-16 mb-4 rounded-xl">
-                  <feature.icon className="h-8 w-8 icon-primary" />
+                  <feature.icon className="h-8 w-8 dark-adaptive-red" />
                 </div>
-                <CardTitle className="text-lg sm:text-xl font-semibold text-gray-800">{feature.title}</CardTitle>
+                <CardTitle className="text-lg sm:text-xl font-semibold high-contrast-text">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent className="card-content-transition">
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -146,23 +146,23 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { title: "Noticias y Eventos", href: "/noticias-eventos", icon: SafeNewspaper, description: "Información actualizada sobre actividades y novedades escolares.", color: "colored-bg" },
-            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Cronograma de fechas importantes y actividades del año escolar.", color: "bg-secondary text-gray-700" },
+            { title: "Calendario Académico", href: "/noticias-eventos/calendario", icon: SafeCalendarDays, description: "Cronograma de fechas importantes y actividades del año escolar.", color: "bg-secondary text-gray-700 dark:text-gray-200" },
             { title: "Portal de Admisiones", href: "/oferta-educativa/admision", icon: SafeUsers, description: "Información sobre el proceso de admisión y requisitos de inscripción.", color: "colored-bg" },
-            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Formularios, reglamentos y documentos oficiales para descargar.", color: "bg-secondary text-gray-700" },
+            { title: "Documentos", href: "/documentos", icon: SafeFileText, description: "Formularios, reglamentos y documentos oficiales para descargar.", color: "bg-secondary text-gray-700 dark:text-gray-200" },
           ].map(link => (
             <Link key={link.title} href={link.href} className="block h-full">
               <Card className="card-hover h-full hover-lift enhanced-shadow rounded-xl overflow-hidden">
                 <CardHeader className={`${link.color} rounded-t-lg`}>
                   <div className="flex justify-center">
-                    <link.icon className="h-10 w-10 sm:h-12 sm:w-12 text-red-600" />
+                    <link.icon className="h-10 w-10 sm:h-12 sm:w-12 text-red-600 dark:text-red-400" />
                   </div>
                 </CardHeader>
                 <CardContent className="pt-6 text-center card-content-transition">
-                  <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-800">{link.title}</h3>
-                  <p className="text-sm text-gray-600">{link.description}</p>
+                  <h3 className="font-semibold text-base sm:text-lg mb-2 text-gray-800 dark:text-gray-200">{link.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{link.description}</p>
                 </CardContent>
                 <CardFooter className="pt-0 pb-4 justify-center">
-                  <Button variant="ghost" size="sm" className="text-red-600 gap-1 rounded-full hover:bg-red-50">
+                  <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20">
                     Ver detalles <SafeArrowRight className="h-3 w-3" />
                   </Button>
                 </CardFooter>
@@ -193,17 +193,18 @@ export default function HomePage() {
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                 />
-              </div>
-              <CardContent className="pt-6 card-content-transition">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-3 flex items-center gap-2 text-sm text-white">
                   <SafeCalendarDays className="h-4 w-4" />
                   <span>{item.date}</span>
                 </div>
-                <h3 className="font-semibold text-lg mb-2 text-gray-800">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
+              </div>
+              <CardContent className="pt-6 card-content-transition">
+                <h3 className="font-semibold text-lg mb-2 text-gray-800 dark:text-gray-200">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{item.description}</p>
               </CardContent>
               <CardFooter className="pt-0 pb-4">
-                <Button variant="ghost" size="sm" className="text-red-600 gap-1 rounded-full hover:bg-red-50" asChild>
+                <Button variant="ghost" size="sm" className="text-red-600 dark:text-red-400 gap-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20" asChild>
                   <Link href="/noticias-eventos">
                     Leer más <SafeArrowRight className="h-3 w-3" />
                   </Link>
@@ -232,9 +233,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
             {mockTestimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden">
+              <Card key={testimonial.id} className="card-hover hover-lift enhanced-shadow rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800">
                 <CardContent className="p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start card-content-transition">
-                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0 shadow-md">
                     <Image
                       src={testimonial.image}
                       alt={`Foto de ${testimonial.name}`}
@@ -246,11 +247,11 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="flex-1 text-center sm:text-left">
-                    <div className="text-red-600 mb-2">❝</div>
-                    <p className="text-gray-700 italic mb-4">{testimonial.quote}</p>
+                    <div className="text-red-600 dark:text-red-400 mb-2">❝</div>
+                    <p className="italic text-gray-700 dark:text-gray-300 mb-4">{testimonial.quote}</p>
                     <div>
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -122,7 +122,7 @@ export function Header() {
         : "bg-gradient-red-black text-white"
     )}>
       {/* Barra superior con información de contacto */}
-      <div className="hidden md:block bg-accent-900 text-white py-1.5">
+      <div className="hidden md:block bg-accent-900/90 dark:bg-accent-950/90 text-white py-1.5 border-b border-white/10">
         <div className="container mx-auto px-4 flex justify-between text-xs">
           <div className="flex items-center space-x-4">
             <span>Teléfono: (+591) 3-9226234</span>
@@ -130,13 +130,13 @@ export function Header() {
             <span>Horario: Lun-Vie 7:00-15:00</span>
           </div>
           <div className="flex space-x-4">
-            <Link href="/oferta-educativa/admision" className="hover:underline">
+            <Link href="/oferta-educativa/admision" className="hover:text-brand-300 transition-colors">
               Admisiones
             </Link>
-            <Link href="/institucional/contacto" className="hover:underline">
+            <Link href="/institucional/contacto" className="hover:text-brand-300 transition-colors">
               Contacto
             </Link>
-            <Link href="/portal" className="hover:underline font-medium">
+            <Link href="/portal" className="font-medium hover:text-brand-300 transition-colors">
               Portal Educativo
             </Link>
           </div>
