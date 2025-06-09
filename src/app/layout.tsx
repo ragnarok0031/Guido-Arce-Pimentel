@@ -14,8 +14,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { cn } from '@/lib/utils';
-import { Breadcrumb } from '@/components/ui/breadcrumb';
-import { usePathname } from 'next/navigation';
+import { BreadcrumbWrapper } from '@/components/breadcrumb-wrapper';
 
 export const metadata: Metadata = {
   title: 'U.E. Guido Arce Pimentel - ArceConnect',
@@ -74,14 +73,6 @@ export const metadata: Metadata = {
     apple: '/Logogap.png',
   },
 };
-
-function BreadcrumbWrapper() {
-  "use client";
-  const pathname = usePathname();
-  // No mostrar breadcrumbs en la página principal
-  if (pathname === '/') return null;
-  return <div className="container mx-auto px-4"><Breadcrumb /></div>;
-}
 
 export default function RootLayout({
   children,
